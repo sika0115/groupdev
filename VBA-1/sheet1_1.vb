@@ -19,7 +19,6 @@ Dim Row　As Long '//行
  
 '//(1)
 Private Sub CommandButton1_Click()
-
 '//接続
 Set 接続 = New ADODB.Connection
 ユーザID = "sk16100"
@@ -79,7 +78,6 @@ End Sub
 
 '//(2)
 Private Sub CommandButton2_Click()
-
 '//接続
 Set 接続 = New ADODB.Connection
 ユーザID = "sk16100"
