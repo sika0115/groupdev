@@ -41,16 +41,20 @@ Set 接続 = New ADODB.Connection
 '//接続.Close
 '//MsgBox ("close")
 
-'//レコードセット
-Set  レコードセット = New ADODB.Recordset 
+'//レコードセットオープン
+Set  レコードセット = New ADODB.Recordset '//SQL発行後データ格納
+
+'//カーソルエンジンの設定
 カーソルエンジン = adUseClient  '// クライアント側=adUseClient，サーバ側=adUseServer 
 レコードセット.CursorLocation = カーソルエンジン
 カーソルタイプ = adOpenDynamic  '// adOpenKeyset，adOpenStatic，adOpenForwardOnly 
 ロック情報 = adLockOptimistic   '// adLockReadOnly，adLockPessimistic 
 オプション= adCmdText           '// adCmdUnknown，adCmdTableDirect
 ソース情報 = "select * from company_19"
+
 レコードセット.Open ソース情報, 接続, カーソルタイプ, ロック情報, オプション
 
+'//レコード追加、更新、削除
 For Coll = 1 To 117 Step 1
     レコードセット.AddNew
     レコードセット.Fields("code").Value = Sheet1.Cells(Coll, "A").Value   '//企業コード : code
@@ -68,10 +72,20 @@ For Coll = 1 To 117 Step 1
 
     レコードセット.Fields("phone").Value = phone_number'//電話番号 : phone
     レコードセット.Update
-    レコードセット.MoveNext
+
+    If レコードセット.EOF == ture Then
+        レコードセット.MoveNext
+    End If
+    
 Next
+
 レコードセット.Close
 接続.Close
+
 MsgBox("格納完了")
-Unload UserForm1
+
+End Sub
+
+Private Sub CommandButton2_Click()
+    レコードセット.Delete
 End Sub
