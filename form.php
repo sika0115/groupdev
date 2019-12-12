@@ -1,10 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional //EN">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>企業一覧表</title>
+<meta charset = "UTF-8">
+<title>s-2</title>
 </head>
-<body bgcolor=#d8e698>
+
+<body bgcolor=#606060>
 
 
 
