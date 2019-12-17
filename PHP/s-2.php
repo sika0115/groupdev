@@ -33,18 +33,15 @@
     $user_id = "sk16100";
     $password = "sk16100";
     
-    /*
     //DBシステムとの接続
     $connect = new PDO("pgsql:host = $server;
                         dbname = $database;
                         port = $port_number;
                         user = $user_id;
-                        password = $user_password");
-    
-                    
+                        password = $user_password");                 
     
     //SQL文の定義
-    $sql_text = "select company, turnover from テーブル where trunover > 100000 order by trunover desc";
+    $sql_text = "select * from company_19";
     //DBの検索
     $result = $connect -> query($sql_text);
     //HTML表の作成
@@ -55,7 +52,20 @@
 	print "<th>所在地</th>";
 	print "<th>電話番号</th>";
 	print "<th>従業員数</th>";
-	print "</tr>"; */
+    print "</tr>"; 
+    
+    $rs = $result -> fetchall();
+    foreach ($rs as $row) :
+        print "<tr>";
+        print '<td>'.$row['企業コード']."</td>";
+        print '<td>'.$row['企業名']."</td>";
+        print '<td>'.$row['所在地']."</td>";
+        print '<td>'.$row['電話番号']."</td>";
+        print '<td>'.$row['従業員数']."</td>";
+        print '</tr>¥n';
+    endforeach;
+    print "</table>¥n"
+
 ?>
 
 </body>
