@@ -14,23 +14,23 @@
             $this->labors = $labors;
         }
 
-        public function getCode(){
+        public function get_code(){
             return $this->code;
         }
 
-        public function getName(){
+        public function get_name(){
             return $this->name;
         }
 
-        public function getAddress(){
+        public function get_address(){
             return $this->address;
         }
         
-        public function getPhone(){
+        public function get_phone(){
             return $this->phone;
         }
         
-        public function getLabors(){
+        public function get_labors(){
             return $this->labors;
         }
     }
