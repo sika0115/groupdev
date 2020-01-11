@@ -1,11 +1,13 @@
 <?php
     class Company{
+        //プロパティ
         private $code;
         private $name;
         private $address;
         private $phone;
         private $labors;
 
+        //メソッド
         public function __construct($code, $name, $address, $phone, $labors){
             $this->code = $code;
             $this->name = $name;
