@@ -1,5 +1,5 @@
 <?php
-  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){  //型の判定も含む　===
     $uid = $_POST['uid'];
     $keyword = $_POST['keyword'];
     $report = $_POST['report'];
@@ -36,6 +36,7 @@ td {
 
 <?php
 //結果の表示
+  
 
 
 ?>
