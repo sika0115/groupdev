@@ -11,6 +11,9 @@
         border : solid 1px;
         padding : 0.5em;
     }
+    td.labors_right{
+        text-align: right;
+    }
     table{
 	    border-collapse : collapse;
     }
@@ -96,7 +99,7 @@
 	                print "<td>" . htmlspecialchars($row->get_name(), ENT_QUOTES, 'UTF-8') . "</td>\n";
         	        print "<td>" . htmlspecialchars($row->get_address(), ENT_QUOTES, 'UTF-8') . "</td>\n";
                     print "<td>" . htmlspecialchars($row->get_phone(), ENT_QUOTES, 'UTF-8') . "</td>\n";
-    	            print "<td>" . htmlspecialchars(number_format($row->get_labors()), ENT_QUOTES, 'UTF-8') . "</td>\n";
+    	            print "<td class=labors_right>" . htmlspecialchars(number_format($row->get_labors()), ENT_QUOTES, 'UTF-8') . "</td>\n";
   		            print "</tr>\n";
    		        }
 		        print "</table>\n";
